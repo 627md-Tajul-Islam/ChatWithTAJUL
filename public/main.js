@@ -62,6 +62,10 @@ function SessionActive(){
     document.write('Session Active. Please come back later')
 }
 
+socket.on('BackOffer', FrontAnswer)
+socket.on('BackAnswer', SignalAnswer)
+socket.on('SessionActive', SessionActive)
+socket.on('CreatePeer', MakePeer)
 
 })
 .catch(err => document.write(err))
