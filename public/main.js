@@ -58,7 +58,10 @@ function CreateVideo(stream){
     document.querySelector('#peerDiv').appendChild(video)
 }
 
-function SessionActive()
+function SessionActive(){
+    document.write('Session Active. Please come back later')
+}
+
 
 })
 .catch(err => document.write(err))
