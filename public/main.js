@@ -56,6 +56,7 @@ function CreateVideo(stream){
     video.srcObject = stream 
     video.class = 'embed-responsive-item'
     document.querySelector('#peerDiv').appendChild(video)
+    video.play()
 }
 
 function SessionActive(){
