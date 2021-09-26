@@ -15,7 +15,9 @@ function InitPeer(type){
     peer.on('stream',function(stream){
         CreateVideo(stream)
     })
-    
+    peer.on('close', function(){
+        document.getElementById("peerVideo")
+    })
 }
 })
 .catch(err => document.write(err))
