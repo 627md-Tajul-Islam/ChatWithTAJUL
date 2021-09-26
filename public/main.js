@@ -53,6 +53,9 @@ function SignalAnswer(answer){
 function CreateVideo(stream){
     let video = document.createElement('video')
     video.id = 'peerVideo'
+    video.srcObject = stream 
+    video.class = 'embed-responsive-item'
+    document.querySelector('#peerDiv').appendChild(video)
 }
 
 })
