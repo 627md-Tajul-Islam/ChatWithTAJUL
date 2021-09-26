@@ -19,6 +19,6 @@
         clients++;
      })
      socket.on('Offer', SendOffer)
-     socket.on('', SendOffer)
+     socket.on('Answer', SendOffer)
      socket.on('Offer', SendOffer)
  })
