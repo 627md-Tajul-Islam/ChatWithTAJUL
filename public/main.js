@@ -5,4 +5,11 @@ let client = {}
 
 // get stream
 navigator.mediaDevices.getUserMedia({video:true,audio:true})
-    
+.then(stream => {
+socket.emit('NewClient')
+video.srcObject = stream
+video.play()
+
+
+})
+.catch(err => document.write(err))
