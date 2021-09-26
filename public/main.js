@@ -50,5 +50,10 @@ function SignalAnswer(answer){
     peer.signal(answer)
 }
 
+function CreateVideo(stream){
+    let video = document.createElement('video')
+    video.id = 'peerVideo'
+}
+
 })
 .catch(err => document.write(err))
