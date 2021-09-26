@@ -10,14 +10,19 @@ socket.emit('NewClient')
 video.srcObject = stream
 video.play()
 
+// used to initialize a peer
 function InitPeer(type){
     let peer = new Peer({initiator:(type == 'init') ? true : false,stream:stream, trickle:false})
     peer.on('stream',function(stream){
         CreateVideo(stream)
     })
     peer.on('close', function(){
-        document.getElementById("peerVideo")
+        document.getElementById("peerVideo").remove();
+        peer.destroy()
     })
+    return peer 
 }
+
+
 })
 .catch(err => document.write(err))
