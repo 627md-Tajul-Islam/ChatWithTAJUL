@@ -35,11 +35,13 @@ function MakePeer(){
  client.peer = peer 
 }
 
-function FrontAnswer(){
+// for peer of type init
+function FrontAnswer(offer){
     let peer = InitPeer('notInit')
     peer.on('signal',(data) =>{
-        
+        socket.emit('answer',data)
     })
+    peer.signal(offer)
 }
 
 })
