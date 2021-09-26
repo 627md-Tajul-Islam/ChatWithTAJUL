@@ -13,3 +13,4 @@ navigator.mediaDevices.getUserMedia({video:true,audio:true})
             let peer = new Peer({initiator:(type == 'init') ? true : false})
         }
     })
+    .catch(err => document.write(err))
