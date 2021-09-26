@@ -11,7 +11,11 @@ video.srcObject = stream
 video.play()
 
 function InitPeer(type){
-    let peer = new Peer({initiator:(type == 'init')})
+    let peer = new Peer({initiator:(type == 'init') ? true : false,stream:stream, trickle:false})
+    peer.on('stream',function(stream){
+        CreateVideo(stream)
+    })
+    
 }
 })
 .catch(err => document.write(err))
