@@ -28,20 +28,26 @@ function MakePeer(){
  client.gotAnswer = false
  let peer = InitPeer('init')
  peer.on('signal', function(data){
-     if(client.gotAnswer){
+     if(!client.gotAnswer){
          socket.emit('Offer',data)
      }
  })
  client.peer = peer 
 }
 
-// for peer of type init
+// for peer of type not init
 function FrontAnswer(offer){
     let peer = InitPeer('notInit')
     peer.on('signal',(data) =>{
         socket.emit('answer',data)
     })
     peer.signal(offer)
+}
+
+function SignalAnswer(answer){
+    client.gotAnswer = true
+    let peer = client.peer
+    peer.signal(answer)
 }
 
 })
