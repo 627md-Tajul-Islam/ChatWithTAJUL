@@ -10,9 +10,10 @@ navigator.mediaDevices.getUserMedia({video:true,audio:true})
         video.play()
 
         function IntiPeer(type){
-            let peer = new Peer({initiator:(type == 'init') ? true : false, stream:stream,trickle:peer.on('stream',function(stream){
-                
-            })})
+            let peer = new Peer({ initiator:(type == 'init') ? true : false, stream:stream, trickle:peer.on('stream',function(stream){
+
+            })
+        })
         }
     })
     .catch(err => document.write(err))
