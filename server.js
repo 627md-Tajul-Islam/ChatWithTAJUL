@@ -26,6 +26,7 @@
  function Disconnect(){
      if (clients > 0)
      clients--
+     this.broadcast("RemoveVideo")
  }
 
  function SendOffer(offer){

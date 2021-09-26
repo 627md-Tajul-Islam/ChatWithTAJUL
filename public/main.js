@@ -23,6 +23,10 @@ function InitPeer(type){
     return peer 
 }
 
+function RemoveVideo(){
+    document.getElementById("peerVideo").remove();
+}
+
 // for peer of type init
 function MakePeer(){
  client.gotAnswer = false
@@ -67,6 +71,7 @@ socket.on('BackOffer', FrontAnswer)
 socket.on('BackAnswer', SignalAnswer)
 socket.on('SessionActive', SessionActive)
 socket.on('CreatePeer', MakePeer)
+socket.on('RemoveVideo', RemoveVideo)
 
 })
 .catch(err => document.write(err))
