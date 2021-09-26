@@ -23,6 +23,10 @@ function InitPeer(type){
     return peer 
 }
 
+// for peer of type init
+function MakePeer(){
+ client.gotAnswer = false
+}
 
 })
 .catch(err => document.write(err))
