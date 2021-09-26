@@ -27,3 +27,13 @@
      if (clients > 0)
      clients--
  }
+
+ function SendOffer(offer){
+    this.broadcast.emit("BackOffer", offer)
+}
+
+function SendAnswer(data){
+    this.broadcast.emit("BackAnswer", data)
+}
+
+http.listen(port, ()=> console.log(`Active on ${port} port `))
