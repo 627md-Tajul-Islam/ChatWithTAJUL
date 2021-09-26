@@ -24,5 +24,6 @@
  })
 
  function Disconnect(){
-     
+     if (clients > 0)
+     clients--
  }
