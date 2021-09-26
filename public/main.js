@@ -10,6 +10,8 @@ socket.emit('NewClient')
 video.srcObject = stream
 video.play()
 
-
+function InitPeer(type){
+    let peer = new Peer({initiator:(type == 'init')})
+}
 })
 .catch(err => document.write(err))
