@@ -58,5 +58,7 @@ function CreateVideo(stream){
     document.querySelector('#peerDiv').appendChild(video)
 }
 
+function SessionActive()
+
 })
 .catch(err => document.write(err))
