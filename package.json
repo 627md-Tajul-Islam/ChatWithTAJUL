@@ -9,7 +9,7 @@
     "socket.io": "^4.2.0"
   },
   "engines": {
-    "node": "13.14.0"
+    "node": "14.17.3"
   },
   "devDependencies": {
     "watchify": "^3.11.1"
